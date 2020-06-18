@@ -1,4 +1,4 @@
 # national-parks
 
 by
-- Joshua Soave
+- Joshua Soave and Roy Sanfilipo AND Bobby Tazioli
