@@ -1,5 +1,6 @@
 # national-parks
 
-by
+Creators:
 - Joshua Soave
+- Roy Sanfilipo
 - Bobby Tazioli
