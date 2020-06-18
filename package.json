@@ -2,7 +2,7 @@
   "name": "national-parks",
   "version": "1.0.0",
   "engines": {
-  "node": "10.11.0"
+    "node": "12.16.2"
   },
   "description": "Creators: - Joshua Soave - Roy Sanfilipo - Bobby Tazioli",
   "main": "server.js",
