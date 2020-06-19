@@ -6,6 +6,7 @@ const mongoose = require('mongoose')
 const db = mongoose.connection
 require('dotenv').config()
 const MONGODB_URI  = process.env.MONGODB_URI
+const PROJECT3_DB = process.env.MONGODB_URI
 
 //~~~~~~~~DB Config~~~~~~~~~~//
 
