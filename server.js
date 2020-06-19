@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 const db = mongoose.connection
 require('dotenv').config()
 const MONGODB_URI  = process.env.MONGODB_URI
-const PROJECT3_DB = process.env.MONGODB_URI
+const PORT = process.env.PORT
 
 //~~~~~~~~DB Config~~~~~~~~~~//
 
@@ -24,14 +24,10 @@ app.use(express.static('public'))
 
 //~~~~~~~~~Controllers~~~~~~~~~//
 
-//controllers
-
-app.get('/', (req, res) => {
-  res.send('hi')
-})
+//controllers 
 
 //~~~~~~~~~Listener~~~~~~~~~//
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log('listening to ariana grande...');
 })
