@@ -8,7 +8,6 @@ require('dotenv').config()
 const PROJECT3_DB  = process.env.PROJECT3_DB
 const PORT = process.env.PORT
 
-console.log(process.env);
 //~~~~~~~~DB Config~~~~~~~~~~//
 
 mongoose.connect(PROJECT3_DB,  { useNewUrlParser: true});
