@@ -1,0 +1,30 @@
+{
+  "name": "national-parks",
+  "version": "1.0.0",
+  "engines": {
+    "node": "12.16.2"
+  },
+  "description": "Creators: - Joshua Soave - Roy Sanfilipo - Bobby Tazioli",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshuasoave/national-parks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshuasoave/national-parks/issues"
+  },
+  "homepage": "https://github.com/joshuasoave/national-parks#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.9.19"
+  }
+}
