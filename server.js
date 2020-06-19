@@ -8,12 +8,13 @@ require('dotenv').config()
 const MONGODB_URI  = process.env.MONGODB_URI
 const PORT = process.env.PORT
 
+console.log(process.env);
 //~~~~~~~~DB Config~~~~~~~~~~//
 
 mongoose.connect(MONGODB_URI,  { useNewUrlParser: true});
 
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
-db.on('connected', () => console.log('mongo connected: ', PROJECT3_DB));
+db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
 //~~~~~~~~~Middleware~~~~~~~~~//
