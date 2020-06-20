@@ -1,10 +1,40 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" ng-app="ParksApp">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Voyageurs</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js" charset="utf-8"></script>
+    <script src="/js/app.js" charset="utf-8"></script>
+
   </head>
-  <body>
-    <h1>eggaegaeg</h1>
+  <body ng-controller="RJBController as ctrl">
+
+    <section ng-if="ctrl.loggedInUser === false">
+      <h2>Sign Up</h2>
+      <form ng-submit="ctrl.signup()">
+        Username: <input type="text" ng-model="ctrl.signupUsername"><br>
+        Password: <input type="password" ng-model="ctrl.signupPassword"><br>
+        Name: <input type="text" ng-model="ctrl.signupName">
+        <input type="submit" value="Sign Up">
+      </form>
+      <h2>Log in</h2>
+      <form ng-submit="ctrl.login()">
+        Username: <input type="text" ng-model="ctrl.loginUsername"><br>
+        Password: <input type="password" ng-model="ctrl.loginPassword"><br>
+        <input type="submit" value="Log In">
+      </form>
+    </section>
+
+    <section ng-if="ctrl.loggedInUser !== false">
+      <button ng-click="ctrl.logout()">Log Out</button>
+      <nav>
+        <ul>
+          <li>My Parks</li>
+          <li>Add Park</li>
+          <li>Edit Park</li>
+          <li>Delete Park</li>
+        </ul>
+      </nav>
+    </section>
   </body>
 </html>
