@@ -1,20 +1,20 @@
 <!-- EDIT BUTTON -->
 <button ng-click="ctrl.showEditForm = !ctrl.showEditForm">Edit Park</button>
 <!-- EDIT FORM -->
-<form ng-submit="ctrl.editPark()" ng-if="ctrl.showEditForm">
+<form ng-submit="ctrl.editPark(park)" ng-if="ctrl.showEditForm">
   <label for="name">Park Name</label>
-  <input type="text" ng-value="park.name" ng-model="park.name"> <br>
+  <input type="text" ng-value="park.name" ng-model="ctrl.updatedPark.name"> <br>
   <label for="location">Image Source</label>
-  <input type="text" ng-value="park.image" ng-model="park.image"> <br>
+  <input type="text" ng-value="park.image" ng-model="ctrl.updatedPark.image"> <br>
   <label for="location">Location</label>
-  <input type="text" ng-value="park.location" ng-model="park.location"> <br>
+  <input type="text" ng-value="park.location" ng-model="ctrl.updatedPark.location"> <br>
   <label for="description">Description</label>
-  <input type="text" ng-value="park.description" ng-model="park.description"> <br>
+  <input type="text" ng-value="park.description" ng-model="ctrl.updatedPark.description"> <br>
   <label for="priority">Priority</label>
-  <input type="text" ng-value="park.priority" ng-model="park.priority"> <br>
+  <input type="text" ng-value="park.priority" ng-model="ctrl.updatedPark.priority"> <br>
   <label for="visited">Visited</label>
-  <input type="checkbox" ng-value="park.visited" ng-model="park.visited"> <br>
+  <input type="checkbox" ng-value="park.visited" ng-model="ctrl.updatedPark.visited"> <br>
   <label for="note" ng-if="park.visited">Note</label>
-  <input type="text" ng-value="park.note" ng-model="park.note" ng-if="park.visited"> <br>
+  <input type="text" ng-value="park.note" ng-model="ctrl.updatedPark.note" ng-if="park.visited"> <br>
   <input type="submit" value="Save Changes">
 </form>
