@@ -1,4 +1,7 @@
-<form ng-submit="ctrl.editPark()">
+<!-- EDIT BUTTON -->
+<button ng-click="ctrl.showEditForm = !ctrl.showEditForm">Edit Park</button>
+<!-- EDIT FORM -->
+<form ng-submit="ctrl.editPark()" ng-if="ctrl.showEditForm">
   <label for="name">Park Name</label>
   <input type="text" ng-value="park.name" ng-model="park.name"> <br>
   <label for="location">Image Source</label>
@@ -13,5 +16,5 @@
   <input type="checkbox" ng-value="park.visited" ng-model="park.visited"> <br>
   <label for="note">Note</label>
   <input type="text" ng-value="park.note" ng-model="park.note"> <br>
-  <input type="submit" value="Edit Park">
+  <input type="submit" value="Save Changes">
 </form>
