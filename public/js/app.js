@@ -35,7 +35,27 @@ app.controller('RJBController', ['$http', function($http){
             controller.loginPassword = null;
         }
     })
-  }
+  };
+
+  this.logout = function (){
+    $http({
+      url: '/sessions',
+      method: 'DELETE'
+    }).then(function(){
+      controller.loggedInUser = false;
+    })
+  };
+
+  $http({
+    method: 'GET',
+    url: '/sessions'
+  }).then(function(response){
+    if(response.data.username){
+      controller.loggedInUser = response.data;
+    }
+  });
+
+
 
 
 
