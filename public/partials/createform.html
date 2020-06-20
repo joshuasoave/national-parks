@@ -1,0 +1,12 @@
+<form ng-submit="createPark()">
+  <fieldset>
+    <legend></legend>
+    <label>Park Name<input ng-model="ctrl.name" type="text"></label>
+    <label>Image<input ng-model="ctrl.name" type="text"></label>
+    <label>Location<input ng-model="ctrl.name" type="text"></label>
+    <label>Description<textarea ng-model="ctrl.description"></textarea></label>
+    <label>Priority<input type="radio" value="high" ng-model="ctrl.priority"><input type="radio" value="medium" ng-model="ctrl.priority"><input type="radio" value="low" ng-model="ctrl.priority"></label>
+    <label>Already visited?<input ng-model="ctrl.name" type="checkbox"></label>
+    <input type="submit" value="Add Park">
+  </fieldset>
+</form>
