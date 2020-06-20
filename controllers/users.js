@@ -5,7 +5,12 @@ const bcrypt = require('bcrypt');
 
 // create router
 
-router.post('/')
+router.post('/', (req, res) => {
+  req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
+  User.create(req.body, (error, createdUser) => {
+    res.json(createdUser);
+  })
+});
 
 
 module.exports = router;
