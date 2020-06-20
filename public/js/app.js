@@ -46,6 +46,30 @@ app.controller('RJBController', ['$http', function($http){
     })
   };
 
+  this.editPark = function(park){
+    $http({
+      url: '/parks',
+      method: 'PUT',
+      data: {
+        name: this.updatedPark.name,
+        image: this.updatedPark.image,
+        location: this.updatedPark.location,
+        description: this.updatedPark.description,
+        priority: this.updatedPark.priority,
+        visited: this.updatedPark.visited,
+        note: this.updatedPark.note
+      }
+    }).then(
+        function(response){
+          controller.updatedPark = {}
+          // controller.getParks();
+        },
+        function(error){
+
+        }
+    );
+  };
+
   $http({
     method: 'GET',
     url: '/sessions'
