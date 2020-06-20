@@ -1,5 +1,5 @@
 <h2>My Parks</h2>
-<div ng-repeat="park in ctrl.parks">
+<div ng-repeat="park in ctrl.loggedInUser.parks">
   <div>{{park.name}}</div>
   <div><img src="{{park.image}}" alt=""></div>
   <div>Located in {{park.location}}</div>
