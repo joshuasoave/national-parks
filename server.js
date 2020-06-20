@@ -25,6 +25,9 @@ app.use(express.static('public'))
 //~~~~~~~~~Controllers~~~~~~~~~//
 
 //controllers
+const usersController = require('.controllers/users.js');
+  app.use('/users', usersController);
+
 
 //~~~~~~~~~Listener~~~~~~~~~//
 
