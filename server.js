@@ -3,6 +3,7 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
+const session = require('express-session')
 const db = mongoose.connection
 require('dotenv').config()
 const PROJECT3_DB  = process.env.PROJECT3_DB
@@ -20,13 +21,20 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 
 app.use(express.json())
 app.use(express.static('public'))
+app.use(session({
+  secret: process.env.SECRET,
+  resave:false,
+  saveUninitialized:false
+}))
 
 
 //~~~~~~~~~Controllers~~~~~~~~~//
 
-//controllers
 const usersController = require('./controllers/users.js');
-  app.use('/users', usersController);
+app.use('/users', usersController);
+
+const sessionsController = require('./controllers/sessions.js');
+app.use('/sessions', sessionsController);
 
 
 //~~~~~~~~~Listener~~~~~~~~~//

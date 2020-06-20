@@ -19,6 +19,24 @@ app.controller('RJBController', ['$http', function($http){
     })
   }
 
+  this.login = function (){
+    $http({
+      url: '/sessions',
+      method: 'POST',
+      data: {
+        username: this.loginUsername,
+        password: this.loginPassword
+      }
+    }).then(function(response){
+        if(response.data.username){
+            controller.loggedInUser = response.data;
+        } else {
+            controller.loginUsername = null;
+            controller.loginPassword = null;
+        }
+    })
+  }
+
 
 
 }]); // this ends the RJBController
