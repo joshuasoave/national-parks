@@ -3,6 +3,7 @@ const app = angular.module("ParksApp", []);
 app.controller('RJBController', ['$http', function($http){
   const controller = this;
   this.loggedInUser = false;
+  this.showEditForm = false;
 
   this.signup = function(){
     $http({
@@ -46,9 +47,13 @@ app.controller('RJBController', ['$http', function($http){
     })
   };
 
+  this.toggleEditForm = function(){
+    controller.showEditForm = !controller.showEditForm;
+  }
+
   this.editPark = function(park){
     $http({
-      url: '/parks',
+      url: '/parks' + park._id,
       method: 'PUT',
       data: {
         name: this.updatedPark.name,
@@ -61,8 +66,9 @@ app.controller('RJBController', ['$http', function($http){
       }
     }).then(
         function(response){
-          controller.updatedPark = {}
-          // controller.getParks();
+          controller.updatedPark = {};
+          controller.showEditForm = false;
+          controller.getParks();
         },
         function(error){
 
