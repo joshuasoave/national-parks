@@ -1,0 +1,17 @@
+<form ng-submit="ctrl.editPark()">
+  <label for="name">Park Name</label>
+  <input type="text" ng-value="park.name" ng-model="park.name"> <br>
+  <label for="location">Image Source</label>
+  <input type="text" ng-value="park.image" ng-model="park.image"> <br>
+  <label for="location">Location</label>
+  <input type="text" ng-value="park.location" ng-model="park.location"> <br>
+  <label for="description">Description</label>
+  <input type="text" ng-value="park.description" ng-model="park.description"> <br>
+  <label for="priority">Priority</label>
+  <input type="text" ng-value="park.priority" ng-model="park.priority"> <br>
+  <label for="visited">Visited</label>
+  <input type="checkbox" ng-value="park.visited" ng-model="park.visited"> <br>
+  <label for="note">Note</label>
+  <input type="text" ng-value="park.note" ng-model="park.note"> <br>
+  <input type="submit" value="Edit Park">
+</form>
