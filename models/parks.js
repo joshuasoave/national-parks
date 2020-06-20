@@ -6,7 +6,7 @@ const parksSchema = new mongoose.Schema({
     location: String,
     description: String,
     priority: {type: String, enum: ['low', 'medium', 'high']},
-    visited: Boolean,
+    visited: {type: Boolean, default: false},
     note: String
 });
 
