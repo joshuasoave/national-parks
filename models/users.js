@@ -7,6 +7,6 @@ const userSchema = new mongoose.Schema({
     parks: Array
 });
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model('ParkUser', userSchema);
 
 module.exports = User;

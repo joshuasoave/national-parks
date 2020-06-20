@@ -10,7 +10,7 @@ const PORT = process.env.PORT
 
 //~~~~~~~~DB Config~~~~~~~~~~//
 
-mongoose.connect(PROJECT3_DB,  { useNewUrlParser: true});
+mongoose.connect(PROJECT3_DB,  { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true, useCreateIndex: true });
 
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
 db.on('connected', () => console.log('mongo connected: ', PROJECT3_DB));
@@ -25,7 +25,7 @@ app.use(express.static('public'))
 //~~~~~~~~~Controllers~~~~~~~~~//
 
 //controllers
-const usersController = require('.controllers/users.js');
+const usersController = require('./controllers/users.js');
   app.use('/users', usersController);
 
 
