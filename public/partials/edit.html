@@ -14,7 +14,7 @@
   <input type="text" ng-value="park.priority" ng-model="park.priority"> <br>
   <label for="visited">Visited</label>
   <input type="checkbox" ng-value="park.visited" ng-model="park.visited"> <br>
-  <label for="note">Note</label>
-  <input type="text" ng-value="park.note" ng-model="park.note"> <br>
+  <label for="note" ng-if="park.visited">Note</label>
+  <input type="text" ng-value="park.note" ng-model="park.note" ng-if="park.visited"> <br>
   <input type="submit" value="Save Changes">
 </form>
