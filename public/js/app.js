@@ -3,7 +3,7 @@ const app = angular.module("ParksApp", []);
 app.controller('RJBController', ['$http', function($http){
   const controller = this;
   this.loggedInUser = false;
-  this.showEditForm = false;
+  this.indexOfEditForm = null;
 
   // delete a parks
     this.deletePark = function($index){
@@ -102,8 +102,12 @@ app.controller('RJBController', ['$http', function($http){
     })
   };
 
-  this.toggleEditForm = function(){
-    controller.showEditForm = !controller.showEditForm;
+  this.toggleEditForm = function(index){
+    if(controller.indexOfEditForm === index) {
+        controller.indexOfEditForm = null;
+    } else {
+        controller.indexOfEditForm = index;
+    }
   }
 
   this.editPark = function(park, index){
@@ -124,7 +128,7 @@ app.controller('RJBController', ['$http', function($http){
     }).then(
         function(response){
           controller.updatedPark = {};
-          controller.showEditForm = false;
+          controller.indexOfEditForm = null;
           controller.getParks();
         },
         function(error){
