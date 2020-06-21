@@ -5,7 +5,6 @@ app.controller('RJBController', ['$http', function($http){
   this.loggedInUser = false;
 
   this.createPark = function () {
-    console.log('hi');
     $http(
       {
         url:'/parks',
@@ -22,7 +21,7 @@ app.controller('RJBController', ['$http', function($http){
       }
     ).then(
       function (response) {
-        console.log(response);
+        console.log(response.data);
       },
       function (error) {
         console.log(error);

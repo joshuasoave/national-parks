@@ -1,0 +1,108 @@
+* {
+  /* border: 1px solid gold; */
+}
+
+body {
+  /* background-color: black; */
+}
+
+/* Create Form */
+
+.form-content {
+  background-color: whitesmoke;
+  padding: 10px;
+  border-radius: 0 10px 10px 0;
+}
+
+textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  outline: none;
+  border-radius: 15px;
+}
+
+input[type=submit] {
+  width: 93%;
+  display: block;
+  margin: 15px auto;
+  padding: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  outline: none;
+  background-color: #E49471;
+  border-radius: 10px;
+}
+
+input[type=text] {
+  border-top-style: hidden;
+  border-left-style: hidden;
+  border-right-style: hidden;
+  border-bottom: .5px solid #ccc;
+  background-color: inherit;
+  box-sizing: border-box;
+  outline: none;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+
+fieldset {
+  border: .5px solid #ccc;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+legend {
+  padding: 0px 10px;
+}
+
+/* label {
+  display: block;
+} */
+
+textarea {
+  resize: none;
+  height: 75px;
+}
+
+.form-inline {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+input[type=radio], input[type=checkbox] {
+  margin-left: 20px;
+}
+
+
+@media (min-width: 735px) {
+  .form-image {
+    width: 50%;
+    background-image: url('https://i.imgur.com/SSTAaD4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .form-content {
+    width: 50%;
+  }
+
+  .createform {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px #bbb,
+            -1px -1px 10px #bbb,
+            1px -1px 10px #bbb,
+            -1px 1px 10px #bbb;
+  }
+
+
+
+}
