@@ -14,25 +14,33 @@ router.post('/', (req, res) => {
 
 // get route
 router.get('/', (req, res)=>{
-    Parks.find({}, (err, foundParks)=>{
-        res.json(foundParks);
-    });
+  User.findById(req.session.user._id, (error, foundUser) => {
+    res.json(foundUser)
+  })
 });
 
 // delete route
-router.delete('/:id', (req, res)=>{
-    Parks.findByIdAndRemove(req.params.id, (err, deletedPark)=>{
-        res.json(deletedPark);
-    });
+router.delete('/:index', (req, res)=>{
+  User.findById(req.session.user._id, (error, foundUser) => {
+    foundUser.parks.splice(req.params.index, 1)
+    foundUser.save((error, data) => {
+      res.json(data)
+    })
+  })
 });
 
 
 // edit route
-router.put('/:id', (req, res) => {
+router.put('/:id/:index', (req, res) => {
   Park.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedPark) => {
-    res.json(updatedPark);
-  });
-});
+    User.findById(req.session.user._id, (error, foundUser) => {
+      foundUser.parks.splice(req.params.index, 1, updatedPark)
+      foundUser.save((error, data) => {
+        res.json(data)
+        })
+      })
+    })
+  })
 
 
 

@@ -1,5 +1,5 @@
 <h2>My Parks</h2>
-<div ng-repeat="park in ctrl.loggedInUser.parks">
+<div ng-repeat="park in ctrl.parks">
   <div>{{park.name}}</div>
   <div><img src="{{park.image}}" alt=""></div>
   <div>Located in {{park.location}}</div>
@@ -7,5 +7,6 @@
   <div>Priority: {{park.priority}}</div>
   <div>Have I visited? {{park.visited}}</div>
   <div>My Notes: {{park.note}}</div>
-  <button ng-click="ctrl.deletePark(park)">Remove Park</button>
+  <button ng-click="ctrl.deletePark($index)">Remove Park</button>
+  <div class="editform" ng-include="'partials/edit.html'"></div>
 </div>
