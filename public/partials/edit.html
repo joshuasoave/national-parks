@@ -1,7 +1,7 @@
 <!-- EDIT BUTTON -->
-<button ng-click="ctrl.toggleEditForm()">Edit Park</button>
+<button ng-click="ctrl.toggleEditForm($index)">Edit Park</button>
 <!-- EDIT FORM -->
-<form ng-submit="ctrl.editPark(park)" ng-if="ctrl.showEditForm">
+<form ng-submit="ctrl.editPark(park)" ng-if="$index === ctrl.indexOfEditForm">
   <label for="name">Park Name</label>
   <input type="text" ng-value="park.name" ng-model="ctrl.updatedPark.name"> <br>
   <label for="location">Image Source</label>
