@@ -6,10 +6,11 @@ app.controller('RJBController', ['$http', function($http){
   this.showEditForm = false;
 
   // delete a parks
-    this.deletePark = function(park){
+    this.deletePark = function($index){
+      console.log($index);
       $http({
         method:'DELETE',
-        url: '/parks/' = park._id
+        url: '/parks/' + $index
       }).then(
         function(response){
           controller.getParks();
@@ -26,7 +27,7 @@ app.controller('RJBController', ['$http', function($http){
         url:'/parks'
       }).then(
         function(response){
-          controller.parks = response.data;
+          controller.parks = response.data.parks;
         }, function(error){
           console.log(error);
       })
@@ -50,6 +51,7 @@ app.controller('RJBController', ['$http', function($http){
     ).then(
       function (response) {
         console.log(response.data);
+        controller.getParks();
       },
       function (error) {
         console.log(error);
@@ -83,6 +85,7 @@ app.controller('RJBController', ['$http', function($http){
     }).then(function(response){
         if(response.data.username){
             controller.loggedInUser = response.data;
+            controller.getParks();
         } else {
             controller.loginUsername = null;
             controller.loginPassword = null;
@@ -134,11 +137,13 @@ app.controller('RJBController', ['$http', function($http){
   }).then(function(response){
     if(response.data.username){
       controller.loggedInUser = response.data;
+      controller.getParks();
     }
   });
 
 
-this.getParks();
+
+
 
 
 }]); // this ends the RJBController
