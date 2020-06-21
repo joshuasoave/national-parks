@@ -3,6 +3,7 @@ const app = angular.module("ParksApp", []);
 app.controller('RJBController', ['$http', function($http){
   const controller = this;
   this.loggedInUser = false;
+  this.showEditForm = false;
 
   // delete a parks
     this.deletePark = function(park){
@@ -96,6 +97,35 @@ app.controller('RJBController', ['$http', function($http){
     }).then(function(){
       controller.loggedInUser = false;
     })
+  };
+
+  this.toggleEditForm = function(){
+    controller.showEditForm = !controller.showEditForm;
+  }
+
+  this.editPark = function(park){
+    $http({
+      url: '/parks' + park._id,
+      method: 'PUT',
+      data: {
+        name: this.updatedPark.name,
+        image: this.updatedPark.image,
+        location: this.updatedPark.location,
+        description: this.updatedPark.description,
+        priority: this.updatedPark.priority,
+        visited: this.updatedPark.visited,
+        note: this.updatedPark.note
+      }
+    }).then(
+        function(response){
+          controller.updatedPark = {};
+          controller.showEditForm = false;
+          controller.getParks();
+        },
+        function(error){
+
+        }
+    );
   };
 
   $http({
