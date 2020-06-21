@@ -4,12 +4,12 @@ app.controller('RJBController', ['$http', function($http){
   const controller = this;
   this.loggedInUser = false;
   this.showEditForm = false;
-
+  
   // delete a parks
     this.deletePark = function(park){
       $http({
         method:'DELETE',
-        url: '/parks/' = park._id
+        url: '/parks/' + park._id
       }).then(
         function(response){
           controller.getParks();
