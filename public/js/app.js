@@ -4,6 +4,33 @@ app.controller('RJBController', ['$http', function($http){
   const controller = this;
   this.loggedInUser = false;
 
+  // delete a parks
+    this.deletePark = function(park){
+      $http({
+        method:'DELETE',
+        url: '/parks/' = park._id
+      }).then(
+        function(response){
+          controller.getParks();
+        },
+        function(error){
+          console.log(error);
+        })
+    }
+
+  // get all the Parks
+    this.getParks = function(){
+      $http({
+        method: 'GET',
+        url:'/parks'
+      }).then(
+        function(response){
+          controller.parks = response.data;
+        }, function(error){
+          console.log(error);
+      })
+    }
+
   this.createPark = function () {
     $http(
       {
@@ -81,7 +108,7 @@ app.controller('RJBController', ['$http', function($http){
   });
 
 
-
+this.getParks();
 
 
 }]); // this ends the RJBController
