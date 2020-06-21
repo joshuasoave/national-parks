@@ -106,9 +106,11 @@ app.controller('RJBController', ['$http', function($http){
     controller.showEditForm = !controller.showEditForm;
   }
 
-  this.editPark = function(park){
+  this.editPark = function(park, index){
+    console.log(park);
+    console.log(index);
     $http({
-      url: '/parks' + park._id,
+      url: '/parks/' + park._id + '/' + index,
       method: 'PUT',
       data: {
         name: this.updatedPark.name,

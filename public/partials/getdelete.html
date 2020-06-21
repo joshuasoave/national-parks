@@ -8,4 +8,5 @@
   <div>Have I visited? {{park.visited}}</div>
   <div>My Notes: {{park.note}}</div>
   <button ng-click="ctrl.deletePark($index)">Remove Park</button>
+  <div class="editform" ng-include="'partials/edit.html'"></div>
 </div>

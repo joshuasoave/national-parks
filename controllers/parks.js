@@ -26,24 +26,21 @@ router.delete('/:index', (req, res)=>{
     foundUser.save((error, data) => {
       res.json(data)
     })
-
   })
-
-
-  console.log(req.params.id);
-  Park.findByIdAndRemove(req.params.id, (err, deletedPark)=>{
-    console.log(deletedPark);
-    // res.json(deletedPark);
-    });
 });
 
 
 // edit route
-router.put('/:id', (req, res) => {
+router.put('/:id/:index', (req, res) => {
   Park.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedPark) => {
-    res.json(updatedPark);
-  });
-});
+    User.findById(req.session.user._id, (error, foundUser) => {
+      foundUser.parks.splice(req.params.index, 1, updatedPark)
+      foundUser.save((error, data) => {
+        res.json(data)
+        })
+      })
+    })
+  })
 
 
 
