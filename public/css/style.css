@@ -151,6 +151,38 @@ input[type=radio], input[type=checkbox] {
   margin-left: 20px;
 }
 
+.editform {
+  color: #F4C86C;
+  margin: 50px auto;
+}
+
+.editform input {
+  color: whitesmoke;
+}
+
+.editform input[type=submit] {
+  margin: 50px auto;
+}
+
+.park-buttons {
+  display: flex;
+  justify-content: center;
+  transform: translateY(-48px);
+}
+
+.park-buttons button {
+  border: none;
+  padding: 10px;
+  font-size: 1.3em;
+  font-family: 'Josefin Sans', sans-serif;
+  cursor: pointer;
+  background-color: whitesmoke;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  opacity: .5;
+  margin: 0 15px;
+}
+
 
 
 
