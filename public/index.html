@@ -5,7 +5,7 @@
     <title>Voyageurs</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js" charset="utf-8"></script>
     <script src="/js/app.js" charset="utf-8"></script>
-
+    <link rel="stylesheet" href="/css/style.css">
   </head>
   <body ng-controller="RJBController as ctrl">
 
@@ -35,8 +35,8 @@
           <li>Delete Park</li>
         </ul>
       </nav>
-      <div ng-include="'partials/edit.html'" class-"edit-form">
-      </div>
+
+      <div class="createform" ng-include="'partials/createform.html'"></div>
     </section>
 
   </body>
