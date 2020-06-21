@@ -4,6 +4,31 @@ app.controller('RJBController', ['$http', function($http){
   const controller = this;
   this.loggedInUser = false;
 
+  this.createPark = function () {
+    $http(
+      {
+        url:'/parks',
+        method:'POST',
+        data: {
+          name: this.name,
+          image: this.image,
+          location: this.location,
+          description: this.description,
+          priority: this.priority,
+          visited: this.visited,
+          note: this.note
+        }
+      }
+    ).then(
+      function (response) {
+        console.log(response.data);
+      },
+      function (error) {
+        console.log(error);
+      }
+    )
+  }
+
   this.signup = function(){
     $http({
       url:'/users',
