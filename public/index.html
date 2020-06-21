@@ -26,7 +26,6 @@
     </section>
 
     <section ng-if="ctrl.loggedInUser !== false">
-      <button ng-click="ctrl.logout()">Log Out</button>
       <nav ng-include="'partials/nav.html'"></nav>
       <div ng-include="ctrl.includePath"></div>
     </section>

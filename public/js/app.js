@@ -59,6 +59,7 @@ app.controller('RJBController', ['$http', function($http){
       function (response) {
         console.log(response.data);
         controller.getParks();
+        controller.changeInclude('getdelete')
       },
       function (error) {
         console.log(error);
