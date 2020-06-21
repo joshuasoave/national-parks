@@ -13,7 +13,7 @@
   <label for="priority">Priority</label>
   <input type="text" ng-value="park.priority" ng-model="ctrl.updatedPark.priority"> <br>
   <label for="visited">Visited</label>
-  <input type="checkbox" ng-value="park.visited" ng-model="ctrl.updatedPark.visited"> <br>
+  <input type="checkbox" ng-checked="park.visited" ng-model="ctrl.updatedPark.visited"> <br>
   <label for="note" ng-if="ctrl.updatedPark.visited">Note</label>
   <input type="text" ng-value="park.note" ng-model="ctrl.updatedPark.note" ng-if="ctrl.updatedPark.visited"> <br>
   <input type="submit" value="Save Changes">
