@@ -27,16 +27,8 @@
 
     <section ng-if="ctrl.loggedInUser !== false">
       <button ng-click="ctrl.logout()">Log Out</button>
-      <nav>
-        <ul>
-          <li>My Parks</li>
-          <li>Add Park</li>
-          <li>Edit Park</li>
-          <li>Delete Park</li>
-        </ul>
-      </nav>
-      <div class="index" ng-include="'partials/getdelete.html'"></div>
-      <div class="createform" ng-include="'partials/createform.html'"></div>
+      <nav ng-include="'partials/nav.html'"></nav>
+      <div ng-include="ctrl.includePath"></div>
     </section>
 
   </body>

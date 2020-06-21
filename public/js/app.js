@@ -4,6 +4,10 @@ app.controller('RJBController', ['$http', function($http){
   const controller = this;
   this.loggedInUser = false;
   this.showEditForm = false;
+  this.includePath = ''
+  this.changeInclude = (path) => {
+    this.includePath = 'partials/' + path + '.html'
+  }
 
   // delete a parks
     this.deletePark = function($index){
