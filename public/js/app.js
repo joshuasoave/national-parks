@@ -4,35 +4,57 @@ app.controller('RJBController', ['$http', function($http){
   const controller = this;
   this.loggedInUser = false;
 
+  // delete a parks
+    this.deletePark = function(park){
+      $http({
+        method:'DELETE',
+        url: '/parks/' = park._id
+      }).then(
+        function(response){
+          controller.getParks();
+        },
+        function(error){
+          console.log(error);
+        })
+    }
 
-// delete a parks
-  this.deletePark = function(park){
-    $http({
-      method:'DELETE',
-      url: '/parks/' = park._id
-    }).then(
-      function(response){
-        controller.getParks();
-      },
-      function(error){
-        console.log(error);
+  // get all the Parks
+    this.getParks = function(){
+      $http({
+        method: 'GET',
+        url:'/parks'
+      }).then(
+        function(response){
+          controller.parks = response.data;
+        }, function(error){
+          console.log(error);
       })
-  }
+    }
 
-// get all the Parks
-  this.getParks = function(){
-    $http({
-      method: 'GET',
-      url:'/parks'
-    }).then(
-      function(response){
-        controller.parks = response.data;
-      }, function(error){
+  this.createPark = function () {
+    $http(
+      {
+        url:'/parks',
+        method:'POST',
+        data: {
+          name: this.name,
+          image: this.image,
+          location: this.location,
+          description: this.description,
+          priority: this.priority,
+          visited: this.visited,
+          note: this.note
+        }
+      }
+    ).then(
+      function (response) {
+        console.log(response.data);
+      },
+      function (error) {
         console.log(error);
-    })
+      }
+    )
   }
-
-
 
   this.signup = function(){
     $http({
