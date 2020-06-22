@@ -6,8 +6,14 @@ app.controller('RJBController', ['$http', function($http){
   this.indexOfEditForm = null;
   this.showEditForm = false;
   this.includePath = ''
+  this.signupBoolean = false;
+  this.loginBoolean = true;
   this.changeInclude = (path) => {
     this.includePath = 'partials/' + path + '.html'
+  }
+  this.includePathForRegistration = 'partials/login.html'
+  this.changeIncludeForRegistration = (path) => {
+    this.includePathForRegistration = 'partials/' + path + '.html'
   }
 
 
@@ -119,8 +125,9 @@ app.controller('RJBController', ['$http', function($http){
   }
 
   this.editPark = function(park, index){
-    console.log(park);
-    console.log(index);
+    if (this.updatedPark.name === undefined) {
+      this.updatedPark.name = 'false'
+    }
     $http({
       url: '/parks/' + park._id + '/' + index,
       method: 'PUT',

@@ -1,16 +1,17 @@
 <div class="index-container">
   <div class="park-card" ng-repeat="park in ctrl.parks">
     <h3>{{park.name}}</h3>
-    <img ng-class="park.visited ? 'visited' : 'not-visited' " src="{{park.image}}" alt="">
-    <div class="park-buttons">
-      <button ng-click="ctrl.deletePark($index)">Remove Park</button>
-      <button ng-click="ctrl.toggleEditForm($index)">Edit Park</button>
+    <div class="main-image">
+      <h2 ng-if="park.visited">Been there, done that</h2>
+      <img ng-class="park.visited ? 'visited' : 'not-visited' " src="{{park.image}}" alt="{{park.name}}">
+      <div class="park-buttons">
+        <button ng-click="ctrl.deletePark($index)">Remove Park</button>
+        <button ng-click="ctrl.toggleEditForm($index)">Edit Park</button>
+      </div>
     </div>
-    <p>Located in {{park.location}}</p>
-    <p>About: {{park.description}}</p>
-    <p>Priority: {{park.priority}}</p>
-    <p>Have I visited? {{park.visited}}</p>
-    <p>My Notes: {{park.note}}</p>
     <div class="editform" ng-include="'partials/edit.html'"></div>
+    <p>Location: {{park.location}}</p>
+    <p>{{park.description}}</p>
+    <p>Notes: {{park.note}}</p>
   </div>
 </div>
