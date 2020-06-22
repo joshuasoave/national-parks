@@ -32,6 +32,7 @@ router.delete('/:index', (req, res)=>{
 
 // edit route
 router.put('/:id/:index', (req, res) => {
+  console.log(req.body);
   Park.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedPark) => {
     User.findById(req.session.user._id, (error, foundUser) => {
       foundUser.parks.splice(req.params.index, 1, updatedPark)
