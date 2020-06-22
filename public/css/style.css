@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 
 * {
-  border: 1px solid gold;
+  /* border: 1px solid gold; */
 }
 
 /* MOBILE STYLING  */
@@ -84,14 +84,20 @@ a {
   text-decoration: none;
 }
 
+footer ul {
+  align-self: center;
+}
+
 .footer-names li {
   color: black;
   font-size: 16px;
+  text-align: center;
 }
 
 .copyright h3 {
   color: black;
   font-size: 16px;
+  text-align: center;
 }
 
 
@@ -201,7 +207,7 @@ a {
 }
 
 .search-bar {
-  margin-bottom: 20px;
+  margin: 20px auto;
 }
 
 .sort-list {
@@ -409,11 +415,7 @@ input[type=radio], input[type=checkbox] {
   }
 
   .footer-names li {
-    font-size: 1.5em;
-  }
-
-  .footer-names li {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
 
   .search-bar {
