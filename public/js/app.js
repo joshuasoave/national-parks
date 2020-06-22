@@ -4,10 +4,12 @@ app.controller('RJBController', ['$http', function($http){
   const controller = this;
   this.loggedInUser = false;
   this.indexOfEditForm = null;
+  this.indexOfInfoForm = null;
   this.showEditForm = false;
   this.includePath = ''
   this.signupBoolean = false;
   this.loginBoolean = true;
+  this.infoBoolean = false;
   this.changeInclude = (path) => {
     this.includePath = 'partials/' + path + '.html'
   }
@@ -15,6 +17,15 @@ app.controller('RJBController', ['$http', function($http){
   this.changeIncludeForRegistration = (path) => {
     this.includePathForRegistration = 'partials/' + path + '.html'
   }
+  this.toggleInfoField = (index) => {
+    if(controller.indexOfInfoForm === index) {
+        controller.indexOfInfoForm = null;
+    } else {
+        controller.indexOfInfoForm = index;
+        controller.indexOfEditForm = null;
+    }
+  }
+
 
 
 
@@ -125,6 +136,7 @@ app.controller('RJBController', ['$http', function($http){
         controller.indexOfEditForm = null;
     } else {
         controller.indexOfEditForm = index;
+        controller.indexOfInfoForm = null;
     }
   }
 

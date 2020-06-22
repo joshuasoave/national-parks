@@ -129,6 +129,36 @@ li:hover {
   margin: 0 15px;
 }
 
+.index-card {
+  border: 1px solid gold;
+  text-align: center;
+  background-color: #F4C86C;
+  opacity: .7;
+  transform: translateY(-46px);
+  border-radius: 0 0 10px 10px;
+}
+
+.main-info p {
+  color: black;
+  padding: 5px;
+  margin: 0;
+}
+
+.notes-index p {
+  margin: 0;
+  color: black;
+  padding: 5px;
+}
+
+.main-info h6, .notes-index h6 {
+  margin: 0;
+  padding: 10px 0;
+  background-color: #F4C86C;
+  text-align: center;
+  font-size: 1.4em;
+}
+
+
 
 
 
@@ -173,6 +203,7 @@ input[type=submit] {
   color: #F4C86C;
   font-size: 1.3em;
   font-family: 'Josefin Sans', sans-serif;
+  cursor: pointer;
 }
 
 input[type=text], input[type=password] {
@@ -217,9 +248,9 @@ input[type=radio], input[type=checkbox] {
   margin-left: 20px;
 }
 
+
 .editform {
   color: #F4C86C;
-  margin: 50px 0px;
 }
 
 .editform input {
@@ -251,6 +282,10 @@ input[type=radio], input[type=checkbox] {
   width: 95%;
   margin: 0 auto;
   border-radius: 10px;
+}
+
+.inline-radio {
+  font-size: 1.2em;
 }
 
 
@@ -287,8 +322,38 @@ input[type=radio], input[type=checkbox] {
   }
 
   .registration-form {
-    width: 550px;
+    width: 400px;
+    margin: 0;
+    border-radius: 0 10px 10px 0;;
   }
+
+  .registration-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .registration-images {
+    width: 400px;
+    height: 540px;
+    border: 1px solid #FEFAE9;
+    border-radius: 10px 0 0 10px;
+    background-image: url(https://i.imgur.com/WVXz4cO.jpg);
+    background-size: cover;
+    animation: transition 20s infinite;
+  }
+
+
+
+  @keyframes transition {
+    0% {background-image: url(https://i.imgur.com/WVXz4cO.jpg);}
+    25% {background-image: url(https://i.imgur.com/WVXz4cO.jpg);}
+    50% {background-image: url(https://i.imgur.com/xZnZd1V.jpg);}
+    75% {background-image: url(https://i.imgur.com/xRkeKW6.jpg);}
+  }
+
+
+
+
 
 
 
