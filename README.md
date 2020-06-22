@@ -1,4 +1,4 @@
-# Voyageurs
+# :evergreen_tree: Voyageurs :evergreen_tree:
 
 ![alt text](https:// ),
 
@@ -12,7 +12,13 @@
 
 [Voyageurs](https://v-o-y-a-g-e-u-r-s.herokuapp.com/) is a single page web application that is used to organize National Parks that the user would like to visit or has already visited.
 
-## Featured:
+If you don't have an account, sign up <here>. Once you've logged in, select Add Park to begin adding National Parks to your collection. Add information about each park, such as an image, location, and description, and set a priority from high to low.
+
+Don't be scared of creating too many parks! You can always search for them in the search bar or sort for them by priority.
+
+Happy exploring!
+
+## Features:
 The user can:
 - Create a username and password
 - log in and log out
@@ -35,6 +41,15 @@ Technologies:
 - Mongoose
 - Bcrypt
 
+## Our Timeline:
+| Day           | Tasks         |
+| ------------- |:-------------:|
+| Thurs 6/18    | Idea, Mongod cloud setup, Heroku setup, File setup |
+| Sat 6/20      | Completed login functionality      |
+| Sun 6/21      | Completed park restful routes, Started CSS Styling      |
+| Mon 6/22      | CSS work, bug fixes, started README     |
+| Tues 6/23     | TBD      |
+
 ## Git Strategy
 
 1. No pushes to git origin dev or git origin master. EVER.
@@ -54,14 +69,16 @@ Technologies:
 - Get to coding!
 
 ## Wins:
-- We came up with a workflow that made sense to us. 
+- We came up with a workflow that made sense to us.
+- We came up with a way to work on the same files separately and then resolve Git issues efficiently.
+- We worked together to problem solve bugs when needed.
 
 ## Challenges:
 - Initial Heroku setup - we misinterpreted the setup instructions. We finally realized that the mongo variables weren't matching up.
 - When we sorted the data by priority we realized that we needed to set the values of 'priority' to 3, 2, and 1 instead of High, Medium, and Low so that it wouldn't sort alphabetically.
-- Clearing the form data after you create a park
+- Clearing the form data after you create a park. We figured out that we had to TBD
+- Footer styling
 -
 
 ## Future Features:
-- Utilize the National Parks API to give the user the option to search and import that data when adding a park.
--
+- Utilize National Parks API to give the user the option to search and import that data when adding a park.
