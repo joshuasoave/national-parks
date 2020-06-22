@@ -1,0 +1,39 @@
+<!-- CREATE FORM -->
+<div class="createform">
+  <div class="form-image"></div>
+  <div class="form-content">
+    <h1>ADD A PARK TO YOUR ITINERARY</h1>
+    <form ng-submit="ctrl.createPark()">
+      <fieldset>
+        <legend>Park Details</legend>
+        <!-- <label for="name">Park Name</label> -->
+        <input ng-model="ctrl.name" type="text" id="name" placeholder="Park Name">
+        <!-- <label for="image">Image</label> -->
+        <input ng-model="ctrl.image" type="text" id="image" placeholder="Image Link">
+        <!-- <label for="location">Location</label> -->
+        <input ng-model="ctrl.location" type="text" id="location" placeholder="Location">
+        <!-- <label for="description">Description</label> -->
+        <textarea ng-model="ctrl.description" id="description" placeholder="Description"></textarea>
+      </fieldset>
+      <fieldset>
+        <legend>Additional Information</legend>
+        <div class="additional-info">
+          <div class="form-inline">
+            <h4>Already visited?</h4>
+            <input ng-model="ctrl.visited" type="checkbox" id="visited">
+          </div>
+          <div class="form-inline">
+            <h4>Priority</h4>
+            <label class='inline-radio'><input type="radio" value="high" ng-model="ctrl.priority" id="priority">High</label>
+            <label class='inline-radio'><input type="radio" value="medium" ng-model="ctrl.priority" id="priority">Medium</label>
+            <label class='inline-radio'><input type="radio" value="low" ng-model="ctrl.priority" id="priority">Low</label>
+          </div>
+          <div class="notes">
+            <textarea ng-model="ctrl.note" id="note" placeholder="Add some notes about your trip"></textarea>
+          </div>
+        </div>
+      </fieldset>
+      <input type="submit" value="Add Park">
+    </form>
+  </div>
+</div>
