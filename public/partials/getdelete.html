@@ -1,5 +1,10 @@
 <div class="index-container">
-  <div class="park-card" ng-repeat="park in ctrl.parks">
+  <nav>
+    <label for="Search By">
+      <input type="text" placeholder="Search" ng-model="searchBox">
+    </label>
+  </nav>
+  <div class="park-card" ng-repeat="park in ctrl.parks | filter: searchBox">
     <h3>{{park.name}}</h3>
     <div class="main-image">
       <h2 ng-if="park.visited">Been there, done that</h2>
