@@ -1,5 +1,19 @@
 <div class="index-container">
-  <div class="park-card" ng-repeat="park in ctrl.parks">
+  <nav>
+    <div class="search-bar">
+      <label for="Search By">
+        <input type="text" placeholder="Search" ng-model="searchBox">
+      </label>
+    </div>
+    <div class="sort-list">
+      <h3>Sort Priority:</h3>
+      <label for="priority-down">High to Low</label>
+      <input type="radio" name="priority" value="-priority" ng-model="priority">
+      <label for="priority-up">Low to High</label>
+      <input type="radio" name="priority" value="priority" ng-model="priority">
+    </div>
+  </nav>
+  <div class="park-card" ng-repeat="park in ctrl.parks | orderBy: priority | filter: searchBox">
     <h3>{{park.name}}</h3>
     <div class="main-image">
       <h2 ng-if="park.visited">Been there, done that</h2>

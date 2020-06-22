@@ -63,9 +63,8 @@ app.controller('RJBController', ['$http', function($http){
       }
     ).then(
       function (response) {
-        console.log(response.data);
         controller.getParks();
-        controller.changeInclude('getdelete')
+        controller.changeInclude('getdelete');
       },
       function (error) {
         console.log(error);
@@ -83,8 +82,10 @@ app.controller('RJBController', ['$http', function($http){
         name: this.signupName
       }
     }).then(function(response){
-      console.log(response.data)
       controller.loggedInUser = response.data;
+      controller.signupUsername = null;
+      controller.signupPassword = null;
+      controller.signupName = null;
       controller.getParks();
     })
   }
@@ -101,6 +102,8 @@ app.controller('RJBController', ['$http', function($http){
         if(response.data.username){
             controller.loggedInUser = response.data;
             controller.getParks();
+            controller.loginUsername = null;
+            controller.loginPassword = null;
         } else {
             controller.loginUsername = null;
             controller.loginPassword = null;
