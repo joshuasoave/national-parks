@@ -85,6 +85,7 @@ app.controller('RJBController', ['$http', function($http){
     }).then(function(response){
       console.log(response.data)
       controller.loggedInUser = response.data;
+      controller.getParks();
     })
   }
 
