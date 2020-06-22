@@ -22,16 +22,32 @@
 
     <section ng-if="ctrl.loggedInUser !== false">
       <nav ng-include="'partials/nav.html'"></nav>
+      <div class="ang-directives">
+        <div class="search-bar">
+          <label for="Search By">
+            <input type="text" placeholder="Search" ng-model="searchBox">
+          </label>
+        </div>
+        <div class="sort-list">
+          <label>Priority:</label>
+          <label>High to Low
+          <input type="radio" name="priority" value="-priority" ng-model="priority"></label>
+          <label>Low to High
+          <input type="radio" name="priority" value="priority" ng-model="priority"></label>
+        </div>
+      </div>
       <div ng-include="ctrl.includePath"></div>
     </section>
     <footer>
-      <h3>© Copyright 2020</h3>
-      <h3>Meet The Devs</h3>
-      <ul>
+      <ul class="footer-names">
+        <li>Meet The Devs</li>
         <li><a href="https://github.com/btaz21">Bobby Tazioli</li>
         <li><a href="https://github.com/joshuasoave">Josh Soave</li>
         <li><a href="https://github.com/roysanfilipo">Roy Sanfilipo</li>
       </ul>
+      <div class="copyright">
+        <h3>© Copyright 2020</h3>
+      </div>
     </footer>
   </body>
 </html>
