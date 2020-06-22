@@ -62,18 +62,11 @@ app.controller('RJBController', ['$http', function($http){
       {
         url:'/parks',
         method:'POST',
-        data: {
-          name: this.name,
-          image: this.image,
-          location: this.location,
-          description: this.description,
-          priority: this.priority,
-          visited: this.visited,
-          note: this.note
-        }
+        data: this.createForm
       }
     ).then(
       function (response) {
+        controller.createForm = {};
         controller.getParks();
         controller.changeInclude('getdelete');
       },
