@@ -2,7 +2,7 @@
 
 ![alt text](https:// ),
 
-### Creators:
+### :computer: Creators:
 
 - Joshua Soave
 - Roy Sanfilipo
@@ -18,7 +18,7 @@ Don't be scared of creating too many parks! You can always search for them in th
 
 Happy exploring!
 
-## Features:
+## :star: Features:
 The user can:
 - Create a username and password
 - log in and log out
@@ -28,7 +28,7 @@ The user can:
 - Search through their National Parks collection
 - Sort their National Parks by the priority that they would like to visit them
 
-## The Build:
+## :wrench: :nut_and_bolt: :hammer: The Build:
 Languages:
 - Javascript
 - HTML5
@@ -41,7 +41,7 @@ Technologies:
 - Mongoose
 - Bcrypt
 
-## Our Timeline:
+## :sun_with_face: :full_moon_with_face: Our Timeline:
 | Day           | Tasks         |
 | ------------- |:-------------:|
 | Thurs 6/18    | Idea, Mongod cloud setup, Heroku setup, File setup |
@@ -50,7 +50,7 @@ Technologies:
 | Mon 6/22      | CSS work, bug fixes, started README     |
 | Tues 6/23     | TBD      |
 
-## Git Strategy
+## :floppy_disk: Git Strategy
 
 1. No pushes to git origin dev or git origin master. EVER.
 2. When you are finished working on changes to your local feature, do a git push origin <name_feature>
@@ -59,7 +59,7 @@ Technologies:
 5. Delete branch once it's been merged.
 6. Whenever any sort of merge is done in github, make sure to do a git pull origin dev.
 
-## Want to make your own improvements?
+## :sparkles: Want to make your own improvements?
 - Visit our [Github](https://github.com/joshuasoave/national-parks)
 - Clone or download the repository
 - Open the project in terminal and your text editor of choice
@@ -68,17 +68,17 @@ Technologies:
 - In new terminal tab run ```nodemon```
 - Get to coding!
 
-## Wins:
+## :dancer: Wins:
 - We came up with a workflow that made sense to us.
 - We came up with a way to work on the same files separately and then resolve Git issues efficiently.
 - We worked together to problem solve bugs when needed.
 
-## Challenges:
+## :sweat: Challenges:
 - Initial Heroku setup - we misinterpreted the setup instructions. We finally realized that the mongo variables weren't matching up.
 - When we sorted the data by priority we realized that we needed to set the values of 'priority' to 3, 2, and 1 instead of High, Medium, and Low so that it wouldn't sort alphabetically.
 - Clearing the form data after you create a park. We figured out that we had to TBD
 - Footer styling
 -
 
-## Future Features:
+## :pray: Future Features:
 - Utilize National Parks API to give the user the option to search and import that data when adding a park.
