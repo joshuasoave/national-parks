@@ -8,46 +8,50 @@
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body ng-controller="RJBController as ctrl">
+    <div class="container">
+      <section ng-if="ctrl.loggedInUser === false">
+        <nav>
+          <ul>
+            <li ng-click="ctrl.changeIncludeForRegistration('login')">Log In</li>
+            <li ng-click="ctrl.changeIncludeForRegistration('signup')">Sign Up</li>
+          </ul>
+        </nav>
+        <h1 class="welcome">Welcome to Voyageurs</h1>
+        <div ng-include="ctrl.includePathForRegistration"></div>
+      </section>
 
-    <section ng-if="ctrl.loggedInUser === false">
-      <nav>
-        <ul>
-          <li ng-click="ctrl.changeIncludeForRegistration('login')">Log In</li>
-          <li ng-click="ctrl.changeIncludeForRegistration('signup')">Sign Up</li>
+    <div class="main">
+      <section ng-if="ctrl.loggedInUser !== false">
+        <nav ng-include="'partials/nav.html'"></nav>
+        <div class="ang-directives">
+          <div class="search-bar">
+            <label for="Search By">
+              <input type="text" placeholder="Search" ng-model="searchBox">
+            </label>
+          </div>
+          <div class="sort-list">
+            <label id="priority">Priority:</label>
+            <label>
+            <input type="radio" name="priority" value="-priority" ng-model="priority"><span id="high2low">High to Low</span></label>
+            <label>
+            <input type="radio" name="priority" value="priority" ng-model="priority"><span id="low2high">Low to High</span></label>
+          </div>
+        </div>
+        <div ng-include="ctrl.includePath"></div>
+      </section>
+    </div>
+  </div>
+
+      <footer>
+        <ul class="footer-names">
+          <li>Meet The Devs</li>
+          <li><a href="https://github.com/btaz21">Bobby Tazioli</li>
+          <li><a href="https://github.com/joshuasoave">Josh Soave</li>
+          <li><a href="https://github.com/roysanfilipo">Roy Sanfilipo</li>
         </ul>
-      </nav>
-      <h1 class="welcome">Welcome to Voyageurs</h1>
-      <div ng-include="ctrl.includePathForRegistration"></div>
-    </section>
-
-    <section ng-if="ctrl.loggedInUser !== false">
-      <nav ng-include="'partials/nav.html'"></nav>
-      <div class="ang-directives">
-        <div class="search-bar">
-          <label for="Search By">
-            <input type="text" placeholder="Search" ng-model="searchBox">
-          </label>
+        <div class="copyright">
+          <h3>© Copyright 2020</h3>
         </div>
-        <div class="sort-list">
-          <label>Priority:</label>
-          <label>High to Low
-          <input type="radio" name="priority" value="-priority" ng-model="priority"></label>
-          <label>Low to High
-          <input type="radio" name="priority" value="priority" ng-model="priority"></label>
-        </div>
-      </div>
-      <div ng-include="ctrl.includePath"></div>
-    </section>
-    <footer>
-      <ul class="footer-names">
-        <li>Meet The Devs</li>
-        <li><a href="https://github.com/btaz21">Bobby Tazioli</li>
-        <li><a href="https://github.com/joshuasoave">Josh Soave</li>
-        <li><a href="https://github.com/roysanfilipo">Roy Sanfilipo</li>
-      </ul>
-      <div class="copyright">
-        <h3>© Copyright 2020</h3>
-      </div>
-    </footer>
+      </footer>
   </body>
 </html>
