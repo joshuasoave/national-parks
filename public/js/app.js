@@ -125,9 +125,7 @@ app.controller('RJBController', ['$http', function($http){
   }
 
   this.editPark = function(park, index){
-    if (this.updatedPark.name === undefined) {
-      this.updatedPark.name = 'false'
-    }
+    console.log(this.updatedPark.visited);
     $http({
       url: '/parks/' + park._id + '/' + index,
       method: 'PUT',

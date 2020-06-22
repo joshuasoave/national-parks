@@ -3,7 +3,7 @@
   <form ng-submit="ctrl.editPark(park, $index)" ng-show="$index === ctrl.indexOfEditForm">
     <div class="checkbox">
       <label for="visited">Already visited? </label>
-      <input type="checkbox" ng-checked="park.visited" ng-model="ctrl.updatedPark.visited">
+      <input type="checkbox" ng-init="ctrl.updatedPark.visited=false" ng-checked="park.visited" ng-model="ctrl.updatedPark.visited">
     </div>
     <div class="general-info">
       <label for="name">Park Name</label>
