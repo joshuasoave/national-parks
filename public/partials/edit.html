@@ -1,28 +1,31 @@
 <!-- EDIT FORM -->
 <div class="editform">
   <form ng-submit="ctrl.editPark(park, $index)" ng-show="$index === ctrl.indexOfEditForm">
-    <div class="checkbox">
-      <label for="visited">Already visited? </label>
-      <input type="checkbox" ng-init="ctrl.updatedPark.visited=false" ng-checked="park.visited" ng-model="ctrl.updatedPark.visited">
-    </div>
-    <div class="general-info">
-      <label for="name">Park Name</label>
-      <input type="text" ng-value="park.name" ng-model="ctrl.updatedPark.name">
-      <label for="location">Image Source</label>
-      <input type="text" ng-value="park.image" ng-model="ctrl.updatedPark.image">
-      <label for="location">Location</label>
-      <input type="text" ng-value="park.location" ng-model="ctrl.updatedPark.location">
-      <label for="description">Description</label>
-      <textarea ng-value="park.description" ng-model="ctrl.updatedPark.description"></textarea>
-      <div class="radio">
-        <h4>Priority</h4>
-        <label>High: <input type="radio" ng-checked="park.priority === 'high'" ng-model="ctrl.updatedPark.priority" value="high" id="priority"></label>
-        <label>Medium: <input type="radio" ng-checked="park.priority === 'medium'" ng-model="ctrl.updatedPark.priority" value="medium" id="priority"></label>
-        <label>Low: <input type="radio" ng-checked="park.priority === 'low'" ng-model="ctrl.updatedPark.priority" value="low" id="priority"></label>
+    <fieldset>
+      <legend>Edit Your Park</legend>
+      <div class="checkbox">
+        <label for="visited">Already visited? </label>
+        <input type="checkbox" ng-init="ctrl.updatedPark.visited=false" ng-checked="park.visited" ng-model="ctrl.updatedPark.visited">
       </div>
-      <label for="note" ng-if="ctrl.updatedPark.visited">Note</label>
-      <textarea ng-value="park.note" ng-model="ctrl.updatedPark.note" ng-if="ctrl.updatedPark.visited"></textarea>
-      <input type="submit" value="Save Changes">
-    </div>
+      <div class="general-info">
+        <label for="name">Park Name</label>
+        <input type="text" ng-value="park.name" ng-model="ctrl.updatedPark.name">
+        <label for="location">Image Source</label>
+        <input type="text" ng-value="park.image" ng-model="ctrl.updatedPark.image">
+        <label for="location">Location</label>
+        <input type="text" ng-value="park.location" ng-model="ctrl.updatedPark.location">
+        <label for="description">Description</label>
+        <textarea ng-value="park.description" ng-model="ctrl.updatedPark.description"></textarea>
+        <div class="radio">
+          <h4>Priority</h4>
+          <label>High: <input type="radio" ng-checked="park.priority === '3'" ng-model="ctrl.updatedPark.priority" value="3" id="priority"></label>
+          <label>Medium: <input type="radio" ng-checked="park.priority === '2'" ng-model="ctrl.updatedPark.priority" value="2" id="priority"></label>
+          <label>Low: <input type="radio" ng-checked="park.priority === '1'" ng-model="ctrl.updatedPark.priority" value="1" id="priority"></label>
+        </div>
+        <label for="note" ng-if="ctrl.updatedPark.visited">Note</label>
+        <textarea ng-value="park.note" ng-model="ctrl.updatedPark.note" ng-if="ctrl.updatedPark.visited"></textarea>
+        <input type="submit" value="Save Changes">
+      </div>
+    </fieldset>
   </form>
 </div>

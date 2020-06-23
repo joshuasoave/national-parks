@@ -5,9 +5,18 @@
   /* border: 1px solid gold; */
 }
 
+/* MOBILE STYLING  */
+
 body {
   font-family: 'Josefin Sans', sans-serif;
   background-color: #28394C;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  position: relative;
+  min-height: 100vh;
 }
 
 .welcome {
@@ -23,6 +32,7 @@ nav {
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px;
+  margin: 1em;
 }
 
 ul {
@@ -55,6 +65,42 @@ li:hover {
   border-radius: 5px;
 }
 
+
+/* Footer */
+footer {
+  background-color: #F4C86C;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+  opacity: 0.7;
+  border-top: 2px solid black;
+}
+
+.footer-container {
+  position: absolute;
+  bottom: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+footer ul {
+  align-self: center;
+}
+
+.footer-names li {
+  color: black;
+  font-size: 16px;
+  text-align: center;
+}
+
+.copyright h3 {
+  color: black;
+  font-size: 16px;
+  text-align: center;
+}
 
 
 
@@ -125,15 +171,69 @@ li:hover {
   background-color: whitesmoke;
   border: 1px solid #ccc;
   border-radius: 10px 10px 0 0;
-  opacity: .5;
+  opacity: .6;
   margin: 0 15px;
 }
 
+.index-card {
+  border: 1px solid gold;
+  text-align: center;
+  background-color: #F4C86C;
+  opacity: .7;
+  transform: translateY(-46px);
+  border-radius: 0 0 10px 10px;
+}
 
+.main-info p {
+  color: black;
+  padding: 5px;
+  margin: 0;
+}
 
+.notes-index p {
+  margin: 0;
+  color: black;
+  padding: 5px;
+}
+
+.main-info h6, .notes-index h6 {
+  margin: 0;
+  padding: 10px 0;
+  background-color: #F4C86C;
+  text-align: center;
+  font-size: 1.4em;
+}
+
+.ang-directives {
+  margin: 30px;
+}
+
+.search-bar {
+  margin: 20px auto;
+}
+
+.search-bar input {
+  color: white;
+}
+
+.sort-list {
+  font-size: 1.2em;
+  font-family: 'Poiret One', cursive;
+  color: #F4C86C;
+  text-align: center;
+}
+
+#priority {
+  font-family: 'Poiret One', cursive;
+  color: #F4C86C;
+}
 
 
 /* Create Form */
+
+.createform {
+  margin: 1em
+}
 
 .form-content {
   background-color: #FEFAE9;
@@ -173,6 +273,7 @@ input[type=submit] {
   color: #F4C86C;
   font-size: 1.3em;
   font-family: 'Josefin Sans', sans-serif;
+  cursor: pointer;
 }
 
 input[type=text], input[type=password] {
@@ -217,9 +318,9 @@ input[type=radio], input[type=checkbox] {
   margin-left: 20px;
 }
 
+
 .editform {
   color: #F4C86C;
-  margin: 50px 0px;
 }
 
 .editform input {
@@ -248,16 +349,47 @@ input[type=radio], input[type=checkbox] {
 .registration-form {
   background-color: #FEFAE9;
   padding: 10px;
-  width: 95%;
+  width: 90%;
   margin: 0 auto;
   border-radius: 10px;
 }
 
+.inline-radio {
+  font-size: 1.2em;
+}
 
+#create-acct {
+  text-decoration: underline;
+  cursor: pointer;
+}
 
+.registration-form h3 {
+  text-align: center;
+  margin-top: 40px;
+}
 
+/* About page  */
 
+.about-page {
+  background-color: #FEFAE9;
+  padding: 10px;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 10px;
+  height: 55vh;
+  font-size: 18px;
+}
 
+.about-page a {
+  color: black;
+  text-decoration: underline;
+}
+
+.about-text {
+  margin: 1em;
+}
+
+/* DESKTOP STYLING */
 
 @media (min-width: 735px) {
   .form-image {
@@ -275,6 +407,12 @@ input[type=radio], input[type=checkbox] {
     border-radius: 0 10px 10px 0;
   }
 
+  .editform {
+    width: 700px;
+    margin: 0 auto;
+    /* margin-bottom: 50px; */
+  }
+
   .createform {
     display: flex;
     justify-content: center;
@@ -287,9 +425,54 @@ input[type=radio], input[type=checkbox] {
   }
 
   .registration-form {
-    width: 550px;
+    width: 400px;
+    margin: 0;
+    border-radius: 0 10px 10px 0;;
   }
 
+  .registration-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .registration-images {
+    width: 400px;
+    height: 540px;
+    border: 1px solid #FEFAE9;
+    border-radius: 10px 0 0 10px;
+    background-image: url(https://i.imgur.com/WVXz4cO.jpg);
+    background-size: cover;
+    animation: transition 20s infinite;
+  }
+
+
+
+  @keyframes transition {
+    0% {background-image: url(https://i.imgur.com/WVXz4cO.jpg);}
+    25% {background-image: url(https://i.imgur.com/WVXz4cO.jpg);}
+    50% {background-image: url(https://i.imgur.com/xZnZd1V.jpg);}
+    75% {background-image: url(https://i.imgur.com/xRkeKW6.jpg);}
+  }
+
+  .footer-names li {
+    font-size: 1.2em;
+  }
+
+  .search-bar {
+    width: 30%;
+  }
+
+  .ang-directives {
+    text-align: center;
+  }
+
+  .about-page {
+    margin: 0 auto;
+    border-radius: 0 10px 10px 0;
+    width: 50%;
+    font-size: 22px;
+    height: auto;
+  }
 
 
 }
