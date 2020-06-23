@@ -3,6 +3,9 @@
   <form ng-submit="ctrl.editPark(park, $index)" ng-show="$index === ctrl.indexOfEditForm">
     <fieldset>
       <legend>Edit Your Park</legend>
+      <div class="exit">
+        <h6 id="exit-tag" ng-click="ctrl.toggleEditForm($index)">x</h6>
+      </div>
       <div class="checkbox">
         <label for="visited">Already visited? </label>
         <input type="checkbox" ng-init="ctrl.updatedPark.visited=false" ng-checked="park.visited" ng-model="ctrl.updatedPark.visited">

@@ -228,6 +228,26 @@ footer ul {
   color: #F4C86C;
 }
 
+.exit {
+  display: flex;
+  justify-content: flex-end;
+  width: 97%;
+}
+
+.exit h6 {
+  cursor: pointer;
+  width: auto;
+  margin: 0;
+}
+
+#exit-tag {
+  font-size: 1.5em;
+}
+
+
+
+
+
 
 /* Create Form */
 
@@ -472,6 +492,23 @@ input[type=radio], input[type=checkbox] {
     width: 50%;
     font-size: 22px;
     height: auto;
+  }
+
+  .not-visited {
+    height: 500px;
+    object-fit: cover;
+  }
+
+  .visited {
+    height: 500px;
+  }
+
+  .main-image {
+    width: 800px;
+  }
+
+  .park-card {
+    width: 800px;
   }
 
 
