@@ -8,7 +8,7 @@
 - Roy Sanfilipo
 - Bobby Tazioli
 
-## About:
+## :sunrise_over_mountains: About:
 
 [Voyageurs](https://v-o-y-a-g-e-u-r-s.herokuapp.com/) is a single page web application that is used to organize National Parks that the user would like to visit or has already visited.
 
@@ -29,11 +29,11 @@ The user can:
 - Sort their National Parks by the priority that they would like to visit them
 
 ## :wrench: :nut_and_bolt: :hammer: The Build:
-Languages:
+### Languages:
 - Javascript
 - HTML5
 - CSS
-Technologies:
+### Technologies:
 - NodeJS
 - AngularJS
 - Express
