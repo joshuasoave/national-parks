@@ -74,7 +74,8 @@ The user can:
 - We worked together to problem solve bugs when needed.
 - We are proud of this code we come up with to access the park data from inside the user. It initially gave us trouble because we were accessing the park info without going into the user's park array.
 
-```router.put('/:id/:index', (req, res) => {
+```Javascript
+router.put('/:id/:index', (req, res) => {
   console.log(req.body);
   Park.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedPark) => {
     User.findById(req.session.user._id, (error, foundUser) => {
@@ -88,9 +89,25 @@ The user can:
   ```
 
 ## :sweat: Challenges:
-- Initial Heroku setup - we misinterpreted the setup instructions. We finally realized that the mongo variables weren't matching up.
-- When we sorted the data by priority we realized that we needed to set the values of 'priority' to 3, 2, and 1 instead of High, Medium, and Low so that it wouldn't sort alphabetically. This caused a major bug because in our model we still had an enum for High, Medium, and Low.
-- Clearing the form data after you create a park. We figured out that we had to TBD
+- Initial Heroku setup - we misinterpreted the setup instructions. Roy realized we had not defined our port in the .env files and mongo Atlas configs. Bobby also pointed out that the names for our mongo database variables did not match up. Once we fixed this issues, things finally worked on heroku.
+- When we sorted the data by priority we realized that we needed to set the values of 'priority' to 3, 2, and 1 instead of High, Medium, and Low so that it wouldn't sort alphabetically. This caused a major bug because in our model we still had an enum for High, Medium, and Low. Anytime we created a new park with a priority the object would come back as null. This is because we needed to remove the enum from how model. Once we did, it solved the issue.
+- Clearing the form data after you create a park or account was another challenge for us. We figured out that we had to attach it to a createForm.name so we could set it to an empty object in the .then of http requests.
+- We had an issue with accessing the id of req.session.user. We kept getting an error cannot get property id of undefined. After doing some console logs, we realized our req.session.user was coming back as undefined. This happened because our form had an ng-model of signupUsername and signupPassword instead of username and password like it was in our user model. Using console.log really helped us solve this issue.   
+
+```Javascript
+router.post('/', (req, res) => {
+  req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
+  User.create(req.body, (error, createdUser) => {
+    console.log(createdUser);
+    req.session.user = createdUser;
+    res.json(req.session.user);
+  })
+});
+```
 
 ## :pray: Future Features:
 - Utilize National Parks API to give the user the option to search and import that data when adding a park.
+
+## :blue_book: Sources:
+- Information about the national parks for our admin account:
+[Wikipedia] (https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States)
