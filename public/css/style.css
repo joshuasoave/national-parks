@@ -368,8 +368,26 @@ input[type=radio], input[type=checkbox] {
   margin-top: 40px;
 }
 
+/* About page  */
 
+.about-page {
+  background-color: #FEFAE9;
+  padding: 10px;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 10px;
+  height: 55vh;
+  font-size: 18px;
+}
 
+.about-page a {
+  color: black;
+  text-decoration: underline;
+}
+
+.about-text {
+  margin: 1em;
+}
 
 /* DESKTOP STYLING */
 
@@ -448,7 +466,13 @@ input[type=radio], input[type=checkbox] {
     text-align: center;
   }
 
-
+  .about-page {
+    margin: 0 auto;
+    border-radius: 0 10px 10px 0;
+    width: 50%;
+    font-size: 22px;
+    height: auto;
+  }
 
 
 }
