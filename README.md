@@ -50,7 +50,7 @@ The user can:
 | Mon 6/22      | CSS work, bug fixes, started README     |
 | Tues 6/23     | TBD      |
 
-## :floppy_disk: Git Strategy
+## :floppy_disk: Git Strategy: 
 
 1. No pushes to git origin dev or git origin master. EVER.
 2. When you are finished working on changes to your local feature, do a git push origin <name_feature>
