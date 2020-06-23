@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 
 * {
-  border: 1px solid gold;
+  /* border: 1px solid gold; */
 }
 
 /* MOBILE STYLING  */
@@ -73,6 +73,8 @@ footer {
   display: flex;
   justify-content: space-between;
   margin-top: 1em;
+  opacity: 0.7;
+  border-top: 2px solid black;
 }
 
 .footer-container {
@@ -84,14 +86,20 @@ a {
   text-decoration: none;
 }
 
+footer ul {
+  align-self: center;
+}
+
 .footer-names li {
   color: black;
   font-size: 16px;
+  text-align: center;
 }
 
 .copyright h3 {
   color: black;
   font-size: 16px;
+  text-align: center;
 }
 
 
@@ -163,7 +171,7 @@ a {
   background-color: whitesmoke;
   border: 1px solid #ccc;
   border-radius: 10px 10px 0 0;
-  opacity: .5;
+  opacity: .6;
   margin: 0 15px;
 }
 
@@ -201,13 +209,18 @@ a {
 }
 
 .search-bar {
-  margin-bottom: 20px;
+  margin: 20px auto;
+}
+
+.search-bar input {
+  color: white;
 }
 
 .sort-list {
   font-size: 1.2em;
   font-family: 'Poiret One', cursive;
   color: #F4C86C;
+  text-align: center;
 }
 
 #priority {
@@ -336,7 +349,7 @@ input[type=radio], input[type=checkbox] {
 .registration-form {
   background-color: #FEFAE9;
   padding: 10px;
-  width: 95%;
+  width: 90%;
   margin: 0 auto;
   border-radius: 10px;
 }
@@ -345,6 +358,15 @@ input[type=radio], input[type=checkbox] {
   font-size: 1.2em;
 }
 
+#create-acct {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.registration-form h3 {
+  text-align: center;
+  margin-top: 40px;
+}
 
 
 
@@ -365,6 +387,12 @@ input[type=radio], input[type=checkbox] {
   .form-content {
     width: 50%;
     border-radius: 0 10px 10px 0;
+  }
+
+  .editform {
+    width: 700px;
+    margin: 0 auto;
+    /* margin-bottom: 50px; */
   }
 
   .createform {
@@ -409,11 +437,7 @@ input[type=radio], input[type=checkbox] {
   }
 
   .footer-names li {
-    font-size: 1.5em;
-  }
-
-  .footer-names li {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
 
   .search-bar {

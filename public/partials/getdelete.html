@@ -1,3 +1,17 @@
+<div class="ang-directives">
+  <div class="search-bar">
+    <label for="Search By">
+      <input type="text" placeholder="Search" ng-model="searchBox">
+    </label>
+  </div>
+  <div class="sort-list">
+    <label id="priority">Priority:</label>
+    <label>
+    <input type="radio" name="priority" value="-priority" ng-model="priority"><span id="high2low">High to Low</span></label>
+    <label>
+    <input type="radio" name="priority" value="priority" ng-model="priority"><span id="low2high">Low to High</span></label>
+  </div>
+</div>
 <div class="index-container">
   <div class="park-card" ng-repeat="park in ctrl.parks | orderBy: priority | filter: searchBox">
     <h3>{{park.name}}</h3>
