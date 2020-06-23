@@ -50,7 +50,7 @@ The user can:
 | Mon 6/22      | CSS work, bug fixes, started README     |
 | Tues 6/23     | TBD      |
 
-## :floppy_disk: Git Strategy: 
+## :floppy_disk: Git Strategy:
 
 1. No pushes to git origin dev or git origin master. EVER.
 2. When you are finished working on changes to your local feature, do a git push origin <name_feature>
@@ -72,13 +72,25 @@ The user can:
 - We came up with a workflow that made sense to us.
 - We came up with a way to work on the same files separately and then resolve Git issues efficiently.
 - We worked together to problem solve bugs when needed.
+- We are proud of this code we come up with to access the park data from inside the user. It initially gave us trouble because we were accessing the park info without going into the user's park array.
+
+```router.put('/:id/:index', (req, res) => {
+  console.log(req.body);
+  Park.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedPark) => {
+    User.findById(req.session.user._id, (error, foundUser) => {
+      foundUser.parks.splice(req.params.index, 1, updatedPark)
+      foundUser.save((error, data) => {
+        res.json(data)
+        })
+      })
+    })
+  })
+  ```
 
 ## :sweat: Challenges:
 - Initial Heroku setup - we misinterpreted the setup instructions. We finally realized that the mongo variables weren't matching up.
-- When we sorted the data by priority we realized that we needed to set the values of 'priority' to 3, 2, and 1 instead of High, Medium, and Low so that it wouldn't sort alphabetically.
+- When we sorted the data by priority we realized that we needed to set the values of 'priority' to 3, 2, and 1 instead of High, Medium, and Low so that it wouldn't sort alphabetically. This caused a major bug because in our model we still had an enum for High, Medium, and Low.
 - Clearing the form data after you create a park. We figured out that we had to TBD
-- Footer styling
--
 
 ## :pray: Future Features:
 - Utilize National Parks API to give the user the option to search and import that data when adding a park.
