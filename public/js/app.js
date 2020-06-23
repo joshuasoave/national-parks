@@ -165,6 +165,7 @@ app.controller('RJBController', ['$http', function($http){
   }).then(function(response){
     if(response.data.username){
       controller.loggedInUser = response.data;
+      console.log(controller.loggedInUser);
       controller.getParks();
     }
   });

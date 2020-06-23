@@ -19,24 +19,9 @@
         <h1 class="welcome">Welcome to Voyageurs</h1>
         <div ng-include="ctrl.includePathForRegistration"></div>
       </section>
-
     <div class="main">
       <section ng-if="ctrl.loggedInUser !== false">
         <nav ng-include="'partials/nav.html'"></nav>
-        <div class="ang-directives">
-          <div class="search-bar">
-            <label for="Search By">
-              <input type="text" placeholder="Search" ng-model="searchBox">
-            </label>
-          </div>
-          <div class="sort-list">
-            <label id="priority">Priority:</label>
-            <label>
-            <input type="radio" name="priority" value="-priority" ng-model="priority"><span id="high2low">High to Low</span></label>
-            <label>
-            <input type="radio" name="priority" value="priority" ng-model="priority"><span id="low2high">Low to High</span></label>
-          </div>
-        </div>
         <div ng-include="ctrl.includePath"></div>
       </section>
     </div>
