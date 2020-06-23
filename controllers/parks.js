@@ -5,6 +5,7 @@ const Park = require('../models/parks.js')
 
 // create route
 router.post('/', (req, res) => {
+  // console.log(req.session.user);
   Park.create(req.body, (error, createdPark) => {
     User.findByIdAndUpdate(req.session.user._id, { $push: {parks:createdPark}}, {new:true}, (error, updatedUser) => {
       res.json(updatedUser)
