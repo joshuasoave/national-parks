@@ -20,24 +20,23 @@
         <h1 class="welcome">Welcome to Voyageurs</h1>
         <div ng-include="ctrl.includePathForRegistration"></div>
       </section>
-    <div class="main">
-      <section ng-if="ctrl.loggedInUser !== false">
-        <nav ng-include="'partials/nav.html'"></nav>
-        <div ng-include="ctrl.includePath"></div>
-      </section>
+      <div class="main">
+        <section ng-if="ctrl.loggedInUser !== false">
+          <nav ng-include="'partials/nav.html'"></nav>
+          <div ng-include="ctrl.includePath"></div>
+        </section>
+      </div>
     </div>
-  </div>
-  <section ng-if="ctrl.loggedInUser === false">
-      <footer>
-        <ul class="footer-names">
-          <li>Meet The Devs</li>
-          <li><a href="https://github.com/btaz21">Bobby Tazioli</a></li>
-          <li><a href="https://github.com/joshuasoave">Josh Soave</a></li>
-          <li><a href="https://github.com/roysanfilipo">Roy Sanfilipo</a></li>
-        </ul>
-        <div class="copyright">
-          <h3>© Copyright 2020</h3>
-        </div>
-      </footer>
+    <footer>
+      <ul class="footer-names">
+        <li>Meet The Devs</li>
+        <li><a href="https://github.com/btaz21">Bobby Tazioli</a></li>
+        <li><a href="https://github.com/joshuasoave">Josh Soave</a></li>
+        <li><a href="https://github.com/roysanfilipo">Roy Sanfilipo</a></li>
+      </ul>
+      <div class="copyright">
+        <h3>© Copyright 2020</h3>
+      </div>
+    </footer>
   </body>
 </html>

@@ -4,9 +4,9 @@
     <form ng-submit="ctrl.signup()">
       <fieldset>
         <legend>Sign Up</legend>
-        <input placeholder='Name' type="text" ng-model="ctrl.signupName">
-        <input placeholder='Username' type="text" ng-model="ctrl.signupUsername"><br>
-        <input placeholder='Password' type="password" ng-model="ctrl.signupPassword"><br>
+        <input placeholder='Name' type="text" ng-model="ctrl.signupForm.name">
+        <input placeholder='Username' type="text" ng-model="ctrl.signupForm.username"><br>
+        <input placeholder='Password' type="password" ng-model="ctrl.signupForm.password"><br>
         <input type="submit" value="Sign Up">
       </fieldset>
     </form>

@@ -19,7 +19,7 @@
       <h2 ng-if="park.visited">Been there, done that</h2>
       <img ng-class="park.visited ? 'visited' : 'not-visited' " src="{{park.image}}" alt="{{park.name}}">
       <div class="park-buttons">
-        <button ng-click="ctrl.toggleInfoField($index)">See More</button>
+        <button ng-click="ctrl.toggleInfoField($index)">Park Info</button>
         <button ng-click="ctrl.deletePark($index)">Remove</button>
         <button ng-click="ctrl.toggleEditForm($index)">Edit</button>
       </div>
@@ -27,6 +27,9 @@
     <div class="editform" ng-include="'partials/edit.html'"></div>
     <div ng-show="$index === ctrl.indexOfInfoForm" class="index-card">
       <div class="main-info">
+        <div class="exit">
+          <h6 ng-click="ctrl.toggleInfoField($index)">x</h6>
+        </div>
         <h6>Location</h6>
         <p>{{park.location}}</p>
         <h6>Description</h6>
