@@ -58,6 +58,7 @@ app.controller('RJBController', ['$http', function($http){
     }
 
   this.createPark = function () {
+    console.log(this.createForm);
     $http(
       {
         url:'/parks',
@@ -80,16 +81,10 @@ app.controller('RJBController', ['$http', function($http){
     $http({
       url:'/users',
       method: 'POST',
-      data: {
-        username: this.signupUsername,
-        password: this.signupPassword,
-        name: this.signupName
-      }
+      data: this.signupForm
     }).then(function(response){
       controller.loggedInUser = response.data;
-      controller.signupUsername = null;
-      controller.signupPassword = null;
-      controller.signupName = null;
+      controller.signupForm = {};
       controller.getParks();
     })
   }
@@ -98,16 +93,12 @@ app.controller('RJBController', ['$http', function($http){
     $http({
       url: '/sessions',
       method: 'POST',
-      data: {
-        username: this.loginUsername,
-        password: this.loginPassword
-      }
+      data: this.loginForm
     }).then(function(response){
         if(response.data.username){
             controller.loggedInUser = response.data;
+            controller.loginForm = {};
             controller.getParks();
-            controller.loginUsername = null;
-            controller.loginPassword = null;
         } else {
             controller.loginUsername = null;
             controller.loginPassword = null;
