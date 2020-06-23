@@ -14,6 +14,7 @@
           <ul>
             <li ng-click="ctrl.changeIncludeForRegistration('login')">Log In</li>
             <li ng-click="ctrl.changeIncludeForRegistration('signup')">Sign Up</li>
+            <li ng-click="ctrl.changeIncludeForRegistration('about')">About</li>
           </ul>
         </nav>
         <h1 class="welcome">Welcome to Voyageurs</h1>
@@ -26,7 +27,7 @@
       </section>
     </div>
   </div>
-
+  <section ng-if="ctrl.loggedInUser === false">
       <footer>
         <ul class="footer-names">
           <li>Meet The Devs</li>
