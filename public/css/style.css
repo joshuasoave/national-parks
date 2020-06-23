@@ -5,9 +5,18 @@
   /* border: 1px solid gold; */
 }
 
+/* MOBILE STYLING  */
+
 body {
   font-family: 'Josefin Sans', sans-serif;
   background-color: #28394C;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  position: relative;
+  min-height: 100vh;
 }
 
 .welcome {
@@ -23,6 +32,7 @@ nav {
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px;
+  margin: 1em;
 }
 
 ul {
@@ -59,23 +69,37 @@ li:hover {
 /* Footer */
 footer {
   background-color: #F4C86C;
-  position: absolute;
-  bottom: 0%;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-top: 1em;
+  opacity: 0.7;
+  border-top: 2px solid black;
+}
+
+.footer-container {
+  position: absolute;
+  bottom: 0;
 }
 
 a {
   text-decoration: none;
 }
 
+footer ul {
+  align-self: center;
+}
+
 .footer-names li {
   color: black;
+  font-size: 16px;
+  text-align: center;
 }
 
 .copyright h3 {
   color: black;
+  font-size: 16px;
+  text-align: center;
 }
 
 
@@ -147,7 +171,7 @@ a {
   background-color: whitesmoke;
   border: 1px solid #ccc;
   border-radius: 10px 10px 0 0;
-  opacity: .5;
+  opacity: .6;
   margin: 0 15px;
 }
 
@@ -184,10 +208,32 @@ a {
   margin: 30px;
 }
 
+.search-bar {
+  margin: 20px auto;
+}
 
+.search-bar input {
+  color: white;
+}
+
+.sort-list {
+  font-size: 1.2em;
+  font-family: 'Poiret One', cursive;
+  color: #F4C86C;
+  text-align: center;
+}
+
+#priority {
+  font-family: 'Poiret One', cursive;
+  color: #F4C86C;
+}
 
 
 /* Create Form */
+
+.createform {
+  margin: 1em
+}
 
 .form-content {
   background-color: #FEFAE9;
@@ -303,7 +349,7 @@ input[type=radio], input[type=checkbox] {
 .registration-form {
   background-color: #FEFAE9;
   padding: 10px;
-  width: 95%;
+  width: 90%;
   margin: 0 auto;
   border-radius: 10px;
 }
@@ -312,11 +358,20 @@ input[type=radio], input[type=checkbox] {
   font-size: 1.2em;
 }
 
+#create-acct {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.registration-form h3 {
+  text-align: center;
+  margin-top: 40px;
+}
 
 
 
 
-
+/* DESKTOP STYLING */
 
 @media (min-width: 735px) {
   .form-image {
@@ -332,6 +387,12 @@ input[type=radio], input[type=checkbox] {
   .form-content {
     width: 50%;
     border-radius: 0 10px 10px 0;
+  }
+
+  .editform {
+    width: 700px;
+    margin: 0 auto;
+    /* margin-bottom: 50px; */
   }
 
   .createform {
@@ -375,8 +436,17 @@ input[type=radio], input[type=checkbox] {
     75% {background-image: url(https://i.imgur.com/xRkeKW6.jpg);}
   }
 
+  .footer-names li {
+    font-size: 1.2em;
+  }
 
+  .search-bar {
+    width: 30%;
+  }
 
+  .ang-directives {
+    text-align: center;
+  }
 
 
 
