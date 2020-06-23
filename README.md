@@ -1,6 +1,6 @@
 # :evergreen_tree: Voyageurs :evergreen_tree:
 
-![Login Page](https://imgur.com/wdkqCI4 "Login Page"),
+![Login Page](https://i.imgur.com/wdkqCI4.png "Login Page"),
 
 ### :computer: Creators:
 
