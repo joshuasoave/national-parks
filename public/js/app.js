@@ -6,7 +6,7 @@ app.controller('RJBController', ['$http', function($http){
   this.indexOfEditForm = null;
   this.indexOfInfoForm = null;
   this.showEditForm = false;
-  this.includePath = ''
+  this.includePath = 'partials/getdelete.html'
   this.signupBoolean = false;
   this.loginBoolean = true;
   this.infoBoolean = false;
@@ -98,6 +98,7 @@ app.controller('RJBController', ['$http', function($http){
         if(response.data.username){
             controller.loggedInUser = response.data;
             controller.loginForm = {};
+            controller.changeInclude('getdelete')
             controller.getParks();
         } else {
             controller.loginUsername = null;
