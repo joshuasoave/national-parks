@@ -90,7 +90,7 @@ router.put('/:id/:index', (req, res) => {
   ```
 
 ## :sweat: Challenges:
-- Initial Heroku setup - we misinterpreted the setup instructions. Roy realized we had not defined our port in the .env files and mongo Atlas configs. Bobby also pointed out that the names for our mongo database variables did not match up. Once we fixed this issues, things finally worked on Heroku.
+- Initial Heroku setup - we misinterpreted the setup instructions. We realized we had not defined our port in the .env files and mongo Atlas configs. We also found out that the names for our mongo database variables did not match up. Once we fixed this issues, things finally worked on Heroku.
 - When we sorted the data by priority we realized that we needed to set the values of 'priority' to 3, 2, and 1 instead of High, Medium, and Low so that it wouldn't sort alphabetically. This caused a major bug because in our model we still had an enum for High, Medium, and Low. Anytime we created a new park with a priority the object would come back as null. Once we removed the old enum from the model, it solved the issue.
 - Clearing the form data after you create a park or account was another challenge for us. We figured out that we had to attach it to a createForm.name so we could set it to an empty object in the .then of http requests.
 - We had an issue with accessing the id of req.session.user. We kept getting an error cannot get property id of undefined. After doing some console logs, we realized our req.session.user was coming back as undefined. This happened because our form had an ng-model of signupUsername and signupPassword instead of username and password like it was in our user model. Using console.log really helped us solve this issue.   
