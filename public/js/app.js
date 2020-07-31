@@ -2,8 +2,6 @@ const app = angular.module("ParksApp", []);
 
 app.controller('RJBController', ['$http', function($http){
   const controller = this;
-  this.adminUsername = "MainAdmin";
-  this.adminPassword = "password";
   this.loggedInUser = false;
   this.indexOfEditForm = null;
   this.indexOfInfoForm = null;
